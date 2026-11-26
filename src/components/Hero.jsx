@@ -7,17 +7,17 @@ export default function Hero() {
       {/* Subtle top radial glow */}
       <div className="pointer-events-none absolute -top-40 left-1/4 h-96 w-96 rounded-full bg-sky-500/10 blur-3xl" />
 
-      <div className="mx-auto max-w-6xl px-5 pb-16 pt-10 sm:px-6 md:pt-24">
-        <div className="grid items-center gap-6 lg:grid-cols-12 lg:gap-12">
+      <div className="mx-auto max-w-6xl px-5 pb-16 pt-10 sm:px-6 lg:pt-24">
+        <div className="grid items-center gap-8 lg:grid-cols-12 lg:gap-12">
           {/* Left Column Wrapper */}
-          <div className="lg:col-span-7">
-            {/* Top Row on Mobile: Headline (Left) + Compact Photo (Right) */}
-            <div className="flex items-center justify-between gap-4 lg:block">
+          <div className="min-w-0 lg:col-span-7">
+            {/* Top Row: Stack vertikal di layar sangat sempit/zoom tinggi, sejajar hanya jika cukup lebar */}
+            <div className="flex flex-col-reverse gap-5 sm:flex-row sm:items-center sm:justify-between lg:block">
               <div className="min-w-0 flex-1">
                 {/* Status Pill */}
-                <div className="mb-3.5 inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-1 sm:mb-6 sm:gap-2 sm:px-3.5">
-                  <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
-                  <span className="font-mono text-[10px] font-semibold tracking-wider text-emerald-300 sm:text-[11px]">
+                <div className="mb-3.5 inline-flex max-w-full items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-1 sm:mb-6 sm:gap-2 sm:px-3.5">
+                  <span className="h-1.5 w-1.5 shrink-0 animate-pulse rounded-full bg-emerald-400" />
+                  <span className="truncate font-mono text-[10px] font-semibold tracking-wider text-emerald-300 sm:text-[11px]">
                     {profileData.status}
                   </span>
                 </div>
@@ -27,15 +27,15 @@ export default function Hero() {
                   {profileData.name}
                 </p>
 
-                {/* Main Headline */}
-                <h1 className="text-[26px] font-extrabold leading-[1.15] tracking-tight text-white sm:text-5xl lg:text-[54px] lg:leading-[1.12]">
+                {/* Main Headline: Ukuran disesuaikan agar maksimal 2-3 baris di semua level zoom */}
+                <h1 className="text-[clamp(1.4rem,3.2vw,3.25rem)] font-extrabold leading-[1.15] tracking-tight text-white lg:leading-[1.12]">
                   {profileData.headlineTop}
                   <span className="block text-sky-400">{profileData.headlineAccent}</span>
                 </h1>
               </div>
 
-              {/* Mobile-Only Side Photo (Right) */}
-              <div className="w-[125px] shrink-0 sm:w-[175px] lg:hidden">
+              {/* Mobile & Zoomed-Desktop Side Photo */}
+              <div className="w-[130px] shrink-0 sm:w-[155px] md:w-[180px] lg:hidden">
                 <div className="relative overflow-hidden rounded-xl border border-slate-800/90 bg-[#0D1424] p-1.5 shadow-xl shadow-black/60">
                   <div className="relative aspect-[4/5] w-full overflow-hidden rounded-lg bg-slate-900">
                     <img
@@ -118,7 +118,6 @@ export default function Hero() {
                     alt={profileData.name}
                     className="h-full w-full object-cover object-top transition duration-500 hover:scale-[1.03]"
                   />
-                  {/* Subtle bottom gradient for clean contrast */}
                   <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#090E1A]/90 via-[#090E1A]/30 to-transparent" />
 
                   {/* Bottom Info Overlay */}

@@ -116,9 +116,9 @@ export const projectsData = [
     number: "04",
     category: "SYSTEM ANALYSIS / DATABASE DESIGN",
     title: "School Company Profile & PPDB Portal",
-    shortDescription:
+    shortDesc:
       "System architecture modeling and relational database design for a school company profile and online student admission (PPDB) web portal.",
-    overview:
+    fullDesc:
       "Served as a System Analyst responsible for modeling system behavior and designing the underlying relational database for a School Company Profile and Online Student Admission (PPDB) portal. Translated functional requirements into structured navigation hierarchies, behavioral and structural UML diagrams, and normalized database table specifications for both public visitors and school administrators.",
     techStack: ["UML", "Class Diagram", "Activity Diagram", "Database Design", "SQL"],
     images: [

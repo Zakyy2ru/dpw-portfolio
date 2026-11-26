@@ -11,11 +11,11 @@ export default function Hero() {
         <div className="grid items-center gap-8 lg:grid-cols-12 lg:gap-12">
           {/* Left Column Wrapper */}
           <div className="min-w-0 lg:col-span-7">
-            {/* Top Row: Stack vertikal di layar sangat sempit/zoom tinggi, sejajar hanya jika cukup lebar */}
-            <div className="flex flex-col-reverse gap-5 sm:flex-row sm:items-center sm:justify-between lg:block">
+            {/* Top Row on Mobile/Tablet: Headline (Left) + Compact Photo (Right) */}
+            <div className="flex flex-row items-center justify-between gap-3.5 sm:gap-5 lg:block">
               <div className="min-w-0 flex-1">
                 {/* Status Pill */}
-                <div className="mb-3.5 inline-flex max-w-full items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-1 sm:mb-6 sm:gap-2 sm:px-3.5">
+                <div className="mb-3 inline-flex max-w-full items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-1 sm:mb-6 sm:gap-2 sm:px-3.5">
                   <span className="h-1.5 w-1.5 shrink-0 animate-pulse rounded-full bg-emerald-400" />
                   <span className="truncate font-mono text-[10px] font-semibold tracking-wider text-emerald-300 sm:text-[11px]">
                     {profileData.status}
@@ -23,19 +23,19 @@ export default function Hero() {
                 </div>
 
                 {/* Name Eyebrow */}
-                <p className="mb-1.5 font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-slate-400 sm:mb-3 sm:text-xs sm:tracking-[0.2em]">
+                <p className="mb-1.5 font-mono text-[10px] font-medium uppercase tracking-[0.16em] text-slate-400 sm:mb-3 sm:text-xs sm:tracking-[0.2em]">
                   {profileData.name}
                 </p>
 
-                {/* Main Headline: Ukuran disesuaikan agar maksimal 2-3 baris di semua level zoom */}
-                <h1 className="text-[clamp(1.4rem,3.2vw,3.25rem)] font-extrabold leading-[1.15] tracking-tight text-white lg:leading-[1.12]">
+                {/* Main Headline: Proporsional di HP samping foto & aman saat di-zoom */}
+                <h1 className="text-[clamp(1.35rem,5.2vw,3.25rem)] font-extrabold leading-[1.15] tracking-tight text-white lg:leading-[1.12]">
                   {profileData.headlineTop}
                   <span className="block text-sky-400">{profileData.headlineAccent}</span>
                 </h1>
               </div>
 
-              {/* Mobile & Zoomed-Desktop Side Photo */}
-              <div className="w-[130px] shrink-0 sm:w-[155px] md:w-[180px] lg:hidden">
+              {/* Mobile & Tablet Side Photo (Right) */}
+              <div className="w-[112px] shrink-0 sm:w-[155px] md:w-[180px] lg:hidden">
                 <div className="relative overflow-hidden rounded-xl border border-slate-800/90 bg-[#0D1424] p-1.5 shadow-xl shadow-black/60">
                   <div className="relative aspect-[4/5] w-full overflow-hidden rounded-lg bg-slate-900">
                     <img

@@ -17,7 +17,10 @@ export const profileData = {
   whatsapp: "https://wa.me/6287750598859?text=Halo%20Dzaky,%20saya%20melihat%20portfolio%20Anda%20dan%20tertarik%20untuk%20berdiskusi.",
   github: "https://github.com/Zakyy2ru",
   linkedin: "https://linkedin.com/in/dzaky-putra-wahyudi-62196943a",
-  cvFile: "/cv-dzaky.pdf",
+  cvFiles: {
+    en: "/CV_Dzaky_Putra_Wahyudi_EN.pdf",
+    id: "/CV_Dzaky_Putra_Wahyudi_ID.pdf",
+  },
 };
 
 export const projectsData = [
